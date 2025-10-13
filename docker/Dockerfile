@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 8501
 
 # Команда для запуску Streamlit
-CMD ["streamlit", "run", "notebooks/04_App_Integration.ipynb", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "app/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
