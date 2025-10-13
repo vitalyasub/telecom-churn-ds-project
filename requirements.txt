@@ -20,3 +20,4 @@ python-dotenv==1.0.1
 
 # Додатково
 jupyterlab==4.2.3
+joblib
