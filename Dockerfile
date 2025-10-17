@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 COPY app.py .
 COPY models ./models
+COPY data ./data
 
 # 4️⃣ Встановлюємо залежності
 RUN pip install --no-cache-dir -r requirements.txt
