@@ -525,6 +525,14 @@ def model_performance_page():
     if os.path.exists(results_path):
         try:
             combined = pd.read_csv(results_path)
+
+            # 🧩 Автоматичне перейменування колонок для уніфікації
+            combined.columns = [c.strip().capitalize().replace("_", " ") for c in combined.columns]
+
+            # Якщо немає колонки "Набір даних", додаємо
+            if "Набір даних" not in combined.columns:
+                combined.insert(0, "Набір даних", ["Holdout"] * len(combined))
+
             st.success("✅ Метрики успішно завантажено з файлу.")
         except Exception as e:
             st.error(f"❌ Помилка при читанні файлу з метриками: {e}")
@@ -536,25 +544,27 @@ def model_performance_page():
             "Accuracy": [0.972, 0.959, 0.954],
             "Precision": [0.981, 0.969, 0.962],
             "Recall": [0.958, 0.956, 0.947],
-            "F1-Score": [0.969, 0.963, 0.955],
-            "ROC AUC": [0.996, 0.994, 0.991],
+            "F1-score": [0.969, 0.963, 0.955],
+            "Roc auc": [0.996, 0.994, 0.991],
         })
 
     st.dataframe(combined, hide_index=True)
 
-    metric_options = ["Accuracy", "Precision", "Recall", "F1-Score", "ROC AUC"]
+    # --- Вибір метрики для візуалізації ---
+    metric_options = [c for c in combined.columns if c not in ["Набір даних"]]
     selected_metric = st.selectbox("Оберіть метрику для порівняння", metric_options)
 
     if selected_metric not in combined.columns:
         st.error(f"Метрика {selected_metric} не знайдена у даних.")
         return
 
+    # --- Побудова графіка ---
     fig, ax = plt.subplots(figsize=(9, 6))
     colors_bar = ["#86AC41", "#7DA3A1", "#34675C"]
     bars = ax.bar(
         combined["Набір даних"],
         combined[selected_metric],
-        color=colors_bar,
+        color=colors_bar[: len(combined)],
         edgecolor="#324851",
         linewidth=2,
     )
