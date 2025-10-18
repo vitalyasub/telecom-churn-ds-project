@@ -27,20 +27,21 @@
 ## 🎨 Інтерактивний веб-інтерфейс
 
 Головна сторінка Streamlit
-![Home page](https://github.com//vitalyasub/telecom-churn-ds-project/tree/main/docs/img/app_pg_1.jpg)
-![Manual_predict](https://github.com//vitalyasub/telecom-churn-ds-project/tree/main/docs/img/app_pg_1_2.jpg)
+![Home page](https://github.com/vitalyasub/telecom-churn-ds-project/raw/main/docs/img/app_pg_1.jpg)
+![Manual_predict](https://github.com/vitalyasub/telecom-churn-ds-project/raw/main/docs/img/app_pg_1_2.jpg)
 
 Пакетний прогноз (CSV)
-![Batch_predict](https://github.com//vitalyasub/telecom-churn-ds-project/tree/main/docs/img/app_pg_2.jpg)
+![Batch_predict](https://github.com/vitalyasub/telecom-churn-ds-project/raw/main/docs/img/app_pg_2.jpg)
 
 Аналітика
-![Feature importance](https://github.com//vitalyasub/telecom-churn-ds-project/tree/main/docs/img/app_pg_3_1.jpg)
-![Models](https://github.com//vitalyasub/telecom-churn-ds-project/tree/main/docs/img/app_pg_3_2.jpg)
+![Feature importance](https://github.com/vitalyasub/telecom-churn-ds-project/raw/main/docs/img/app_pg_3_1.jpg)
+![Models](https://github.com/vitalyasub/telecom-churn-ds-project/raw/main/docs/img/app_pg_3_2.jpg)
 
 ---
 
 ## 🗂️ Структура Репозиторію
 
+```
 telecom-churn-ds-project/
 │-- data/                    # Вхідні дані
 │-- docs/                    # Звіти етапів, презентація, інструкції
@@ -51,6 +52,7 @@ telecom-churn-ds-project/
 │-- README.md                # Опис проєкту
 │-- app/                     # Основний файл Streamlit застосунку
 │-- requirements.txt         # Залежності
+```
 
 ---
 
