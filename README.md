@@ -65,9 +65,8 @@ telecom-churn-ds-project/
 2.  **Data Preprocessing & Feature Engineering:**
 Обробка відсутніх значень, кодування категоріальних змінних (One-Hot/Label Encoding) та стандартизація числових ознак. _(Див.: `notebooks/02_Preprocessing.ipynb`)_.
 3.  **Model Training & Hyperparameter Tuning:**
-Навчання та порівняння 8 моделей ML (LightGBM, XGBoost, CatBoost, Random Forest, Logistic Regression, та ін.). Оптимізація гіперпараметрів найкращих моделей за допомогою **GridSearchCV**. _(Див.: `notebooks/03_Modeling.ipynb`, `notebooks/04_Tuning.ipynb`)_.
-
-**Final Model Evaluation:**
+- Навчання та порівняння 8 моделей ML (LightGBM, XGBoost, CatBoost, Random Forest, Logistic Regression, та ін.). Оптимізація гіперпараметрів найкращих моделей за допомогою **GridSearchCV**. _(Див.: `notebooks/03_Modeling.ipynb`, `notebooks/04_Tuning.ipynb`)_.
+- **Final Model Evaluation:**
 Фінальне навчання найкращої моделі LightGBM та її оцінка на незалежному **hold-out тесті** з ретельною перевіркою на перенавчання. _(Див.: `notebooks/05_Final_Training.ipynb`, `notebooks/06_Model_Evaluation.ipynb`)_.
 4.  **Deployment & Integration:**
 Інтеграція фінальної моделі у веб-застосунок на **Streamlit** для зручного прогнозування. _(Див.: `app/app.py`)_.
@@ -133,15 +132,18 @@ _Висновок: LightGBM продемонструвала найкраще с
 ### 🔹 1. Локальний Запуск Застосунку
 
 1.  **Клонування репозиторію:**
+
     ```bash
     git clone git clone git@github.com:vitalyasub/telecom-churn-ds-project.git
     cd telecom-churn-ds-project
     ```
 2.  **Встановлення залежностей:**
+
     ```bash
     pip install -r requirements.txt
     ```
 3.  **Запуск застосунку Streamlit:**
+
     ```bash
     streamlit run app.py
     ```
@@ -152,10 +154,12 @@ _Висновок: LightGBM продемонструвала найкраще с
 Для відтворюваного запуску використовуйте Docker.
 
 1.  **Побудова образу Docker:**
+
     ```bash
     docker build -t telecom-churn .
     ```
 2.  **Запуск контейнера:**
+
     ```bash
     docker run -p 8501:8501 telecom-churn
     ```
@@ -177,6 +181,6 @@ _Висновок: LightGBM продемонструвала найкраще с
 
 ## 📜 Документація
 
-- **Технічні звіти** (`docs/reports`)
-- **Презентація проєкту** (`docs/reports/PMLP_presentation.pptx, PMLP_presentation.pdf`)
-- **Jupyter Notebooks** для кожного етапу розробки (`notebooks/`)
+- **Технічні звіти** (Див.:`docs/reports`)
+- **Презентація проєкту** (Див.:`docs/reports/PMLP_presentation.pptx, PMLP_presentation.pdf`)
+- **Jupyter Notebooks** для кожного етапу розробки (Див.:`notebooks/`)
