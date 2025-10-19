@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     gfortran \
     && rm -rf /var/lib/apt/lists/*
 
-# 3️⃣ Копіюємо файли
+# 3️⃣ Копіюємо файли проєкту
 COPY requirements.txt .
 COPY app.py .
 COPY models ./models
@@ -27,5 +27,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 5️⃣ Відкриваємо порт Streamlit
 EXPOSE 8501
 
-# 6️⃣ Команда запуску
+# 6️⃣ Автоматичний запуск Streamlit при старті контейнера
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
