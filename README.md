@@ -34,6 +34,7 @@
 ![Batch_predict](https://github.com/vitalyasub/telecom-churn-ds-project/raw/main/docs/img/app_pg_2.jpg)
 
 Аналітика
+
 ![Feature importance](https://github.com/vitalyasub/telecom-churn-ds-project/raw/main/docs/img/app_pg_3_1.jpg)
 ![Models](https://github.com/vitalyasub/telecom-churn-ds-project/raw/main/docs/img/app_pg_3_2.jpg)
 
@@ -65,7 +66,7 @@ telecom-churn-ds-project/
 2.  **Data Preprocessing & Feature Engineering:**
 Обробка відсутніх значень, кодування категоріальних змінних (One-Hot/Label Encoding) та стандартизація числових ознак. _(Див.: `notebooks/02_Preprocessing.ipynb`)_.
 3.  **Model Training & Hyperparameter Tuning:**
-- Навчання та порівняння 8 моделей ML (LightGBM, XGBoost, CatBoost, Random Forest, Logistic Regression, та ін.). Оптимізація гіперпараметрів найкращих моделей за допомогою **GridSearchCV**. _(Див.: `notebooks/03_Modeling.ipynb`, `notebooks/04_Tuning.ipynb`)_.
+- Навчання та порівняння 8 моделей ML (LightGBM, RandomForest, CatBoost, GradientBoosting, MLP, SVC_linear, LogisticRegression, XGBoost). Оптимізація гіперпараметрів найкращих моделей за допомогою **GridSearchCV**. _(Див.: `notebooks/03_Modeling.ipynb`, `notebooks/04_Tuning.ipynb`)_.
 - **Final Model Evaluation:**
 Фінальне навчання найкращої моделі LightGBM та її оцінка на незалежному **hold-out тесті** з ретельною перевіркою на перенавчання. _(Див.: `notebooks/05_Final_Training.ipynb`, `notebooks/06_Model_Evaluation.ipynb`)_.
 4.  **Deployment & Integration:**
