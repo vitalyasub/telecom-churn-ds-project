@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  streamlit_app:
+    container_name: telecom-churn-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: telecom-churn:latest
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+    networks:
+      - telecom_net
+    restart: unless-stopped
+    command: >
+      streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+
+networks:
+  telecom_net:
+    driver: bridge
